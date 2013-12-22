@@ -75,7 +75,7 @@ signin = function(mode, callback) {
  */
 authenticate = function($scope, $location) {
 	if (!$scope.signed) {
-		signin(false, userAuthenticated($scope, $location));
+		signin(false, function() { userAuthenticated($scope, $location); });
 	} else {
 		$scope.signed = false;
 		$location.path('/login');
